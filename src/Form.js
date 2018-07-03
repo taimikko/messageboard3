@@ -3,24 +3,30 @@ import {Button, ControlLabel, FormControl, FormGroup} from 'react-bootstrap';
 import {dbAddress} from './db';
 
 class App extends Component {
-    state = {message: '',
-             type: 'info'};
+    state = {
+        message: '',
+        type: 'info',
+        active: true
+    };
+    isActive = () => !this.state.active;
     onSubmit = async event => {
         event.preventDefault();
         const {message, type} = this.state;
-        await fetch(dbAddress, {
-            /* fetchillä pyyntö tietokantaan */
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method: 'POST',
-            body: JSON.stringify({
-                message,
-                timeStamp: Date.now(),
-                type
-            }) /* tässä voidaan antaa myös muita tieoja kuten aikaleima */
-        });
-        this.setState({message: ''});
+        this.setState({active: false});
+        if (this.state.message)
+            await fetch(dbAddress, {
+                /* fetchillä pyyntö tietokantaan */
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                    message,
+                    timeStamp: Date.now(),
+                    type
+                }) /* tässä voidaan antaa myös muita tieoja kuten aikaleima */
+            });
+        this.setState({message: '', active: true});
         /* nollatan message lähetyksen jälkeen */
     };
 
@@ -30,6 +36,7 @@ class App extends Component {
                 <FormGroup>
                     <ControlLabel>Message</ControlLabel>
                     <FormControl
+                        disabled={this.isActive()}
                         type="text"
                         placeholder="Message"
                         value={this.state.message}
@@ -48,7 +55,7 @@ class App extends Component {
                     </label>
                 </div>
 
-                <Button bsStyle="primary" type="submit" block>
+                <Button disabled={this.isActive()} bsStyle="primary" type="submit" block>
                     Submit
                 </Button>
             </form>
