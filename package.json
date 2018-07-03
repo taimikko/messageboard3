@@ -1,0 +1,25 @@
+{
+  "name": "message-board",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": " concurrently \"npm run start:db\" \"react-scripts start\" ",
+    "start:db": "pouchdb-server --dir pouchdb",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "concurrently": "^3.6.0",
+    "pouchdb-server": "^4.0.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "pouchdb": "^7.0.0",
+    "react-bootstrap": "^0.32.1",
+    "react-pouchdb": "^0.2.0"
+  }
+}
