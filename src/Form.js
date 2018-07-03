@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Button, ControlLabel, FormControl, FormGroup} from 'react-bootstrap';
 import {dbAddress} from './db';
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 class App extends Component {
     state = {
@@ -64,5 +65,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*  onChange={event => this.setState({type: event.target.value})} */
