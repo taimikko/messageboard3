@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="https://github.com/taimikko">
+  <component name="PublishConfigData" serverName="https://github.com/taimikko" uploadOnCheckin="8cbae9ba-5d79-43a9-b129-0dcea230d20c">
     <serverData>
       <paths name="https://github.com/taimikko">
         <serverdata>
@@ -10,5 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="https://github.com/taimikko" />
   </component>
 </project>

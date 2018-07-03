@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "concurrently": "^3.6.0",
+    "moment": "^2.22.2",
     "pouchdb-server": "^4.0.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

@@ -4,7 +4,7 @@ import {dbAddress} from './db';
 
 class App extends Component {
     state = {message: '',
-             type: ''};
+             type: 'info'};
     onSubmit = async event => {
         event.preventDefault();
         const {message, type} = this.state;
@@ -20,7 +20,7 @@ class App extends Component {
                 type
             }) /* tässä voidaan antaa myös muita tieoja kuten aikaleima */
         });
-        this.setState({message: '', type: ''});
+        this.setState({message: ''});
         /* nollatan message lähetyksen jälkeen */
     };
 

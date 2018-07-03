@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="8cbae9ba-5d79-43a9-b129-0dcea230d20c" name="https://github.com/taimikko">
-        <fileTransfer port="21">
+        <fileTransfer host="" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
